@@ -1,0 +1,83 @@
+    1  sudo yum -y groupinstall "development tools"
+    2  sudo yum -y install epel-release wget
+    3  sudo wget http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+    4  sudo rpm -Uvh remi-release-7.rpm
+    5  sudo yum -y install --enablerepo=remi-php72 php php-pdo php-mysqlnd php-mbstring php-xml php-fpm php-common php-devel php-mysql unzip
+    6  php -v
+    7  php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+    8  php composer-setup.php
+    9  php -r "unlink('composer-setup.php');"
+   10  sudo mv composer.phar /usr/local/bin/composer
+   11  composer -v
+   12  cd /vagrant
+   13   mkdir server_lesson && cd server_lesson
+   14  git init
+   15  touch first.txt
+   16  cd /vagrant
+   17  mkdir -p server_lesson/linux_practice/public
+   18  touch server_lesson/linux_practice/public/index.php
+   19  cd /vagrant/server_lesson && ls
+   20  cd /vagrant/server_lesson/linux_practice/public
+   21  cp index.php index_bk.php
+   22  ls
+   23  cd /vagrant/server_lesson/linux_practice
+   24  cp -r public tmp
+   25  ls ./ public tmp
+   26  cd /vagrant
+   27  mv server_lesson/linux_practice server_lesson/linux_practice1
+   28  mkdir linux_practice2 linux_practice3
+   29  mv ./linux_practice2 ./server_lesson
+   30   cd /vagrant/server_lesson/linux_practice1/tmp/
+   31  rm *_bk.php
+   32  cd /vagrant
+   33  rm server_lesson/first.txt
+   34  rm -r linux_practice3
+   35  ls server_lesson
+   36  cd /vagrant/server_lesson
+   37  echo '# サーバレッスン' > README.md
+   38   echo 'Linuxプラクティス' >> README.md
+   39  echo '-----------------' >> README.md
+   40  cat README.md
+   41  cd /vagrant/server_lesson
+   42  vi README.md
+   43  git status
+   44  git add .
+   45  git status
+   46  git commit -m 'first commit'
+   47  git log
+   48  git status
+   49  git remote add origin https://github.com/miurakaikaito/server_lesson.git
+   50  gir remove -v
+   51  git remote -v
+   52  git push origin master
+   53  git branch server
+   54  git branch
+   55  git checkout server
+   56  git branch
+   57  ls
+   58  cd linux_practice2
+   59  mkdir documents
+   60  ls
+   61  cd documents
+   62  ls
+   63  touch gizumo{1..50}.md
+   64  ls
+   65  cd /linux_practice2
+   66  cd /vgrant
+   67  cd /vagrant
+   68  ls
+   69  cd server_lesson
+   70  ls
+   71  cd linux_practice
+   72  cd linux_practice2
+   73  mkdir trash
+   74  ls
+   75  ./documents/gizumo{20..40}.md ./trash
+   76  mv ./documents/gizumo{20..40}.md ./trash
+   77  touch .gitignore
+   78  cd .gitignore
+   79  ls
+   80  touch .gitignore
+   81  ls
+   82  vi .gitignore
+   83  history 300
